@@ -5,21 +5,18 @@
 </template>
 
 <script>
+import { bus } from '../main';
+
 export default {
-  props: {
-    title: {
-      type: String,
-      required: true
-    }
-  },
   data() {
     return {
-
+      title: 'Vue Ninjas'
     }
   },
   methods: {
     changeTitle: function () {
-      this.$emit('changeTitle', 'Vue Wizards')
+      this.title = 'Vue Wizards';
+      bus.$emit('titleChanged', this.title);
     }
   }
 }
