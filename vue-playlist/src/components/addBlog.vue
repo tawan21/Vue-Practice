@@ -59,7 +59,7 @@ export default {
         title: this.blog.title,
         body: this.blog.content,
         userId: 1
-      }).then(function(data){
+      }).then(data => {
         console.log(data);
         this.submitted = true;
       });
