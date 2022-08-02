@@ -4,19 +4,12 @@ import VueResource from 'vue-resource'
 
 Vue.use(VueResource);
 
-Vue.directive('rainbow', {
-  bind(el, binding, vnode) {
-    el.style.color = "#" + Math.random().toString().slice(2, 8);
-  }
+Vue.filter('to-upper', value => {
+  return value.toUpperCase();
 });
 
-Vue.directive('theme', {
-  bind(el, binding, vnode) {
-    if(binding.value == 'wide')
-      el.style.maxWidth = '1200px';
-    else if(binding.value == 'compact')
-      el.style.maxWidth = '560px';
-  }
+Vue.filter('snippet', value => {
+  return value.slice(0, 100) + '...';
 });
 
 new Vue({
